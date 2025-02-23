@@ -25,7 +25,7 @@ const StockChart = () => {
 
     try {
       // Make request to your backend API endpoint
-      const response = await fetch(`http://localhost:3000/search?${queryParams}`, {
+      const response = await fetch(`http://localhost:3001/search?${queryParams}`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
