@@ -12,9 +12,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true })); // Use express.urlencoded() properly
 app.use(cors());
 
-app.get('/', (req, res) => {
-  res.send("Hello World");
-});
+// app.get('/', (req, res) => {
+//   res.send("Hello World");
+// });
+
+app.get('/', async (req, res) => {
+    const { symbol = 'INFY' } = req.query; // Get symbol from query parameters, default to 'INFY' if not provided
+   // const symbol='AAPL' // Remove this hardcoded symbol
+   console.log("Fetching news for:", symbol);
+   try {
+     const query = 'AAPL';
+     const result = await yahooFinance.search(query, /* queryOptions */);
+       return res.json(result);
+   } catch (error) {
+     console.error(`Error fetching news for ${symbol}:`, error);                      0 
+     return res.status(500).json({ error: `Failed to fetch news for ${symbol}` });
+   }
+ });
 
 app.get('/realtime', async (req, res) => {
   try {
@@ -36,6 +50,20 @@ app.get('/realtime', async (req, res) => {
     return res.status(500).json({ error: 'Failed to fetch stock data' });
   }
 });
+
+
+app.get('/news', async (req, res) => {
+         const { symbol = 'INFY' } = req.query; // Get symbol from query parameters, default to 'INFY' if not provided
+        // const symbol='AAPL' // Remove this hardcoded symbol
+        try {
+          const query = 'GOO';
+          const result = await yahooFinance.search(query, /* queryOptions */);
+            return res.json(result);
+        } catch (error) {
+          console.error(`Error fetching news for ${symbol}:`, error);
+          return res.status(500).json({ error: `Failed to fetch news for ${symbol}` });
+        }
+      });
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

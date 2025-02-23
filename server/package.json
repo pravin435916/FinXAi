@@ -1,19 +1,24 @@
 {
-  "name": "index",
+  "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon index.js"
-  },
-  "author": "",
-  "license": "ISC",
   "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "MP"
+  ],
+  "author": "MP",
+  "license": "ISC",
   "dependencies": {
     "axios": "^1.7.9",
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "express-validator": "^7.2.1",
     "i": "^0.3.7",
+    "mongoose": "^8.10.1",
     "nodemon": "^3.1.9",
     "npm": "^10.9.2",
     "yahoo-finance2": "^2.13.3"

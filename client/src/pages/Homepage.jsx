@@ -2,6 +2,7 @@ import React from 'react';
 import { Newspaper } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import MarketOverview from '../components/MarketOverview';
+import StockChart from '../components/chart/page';
 
 const HomePage = () => {
   const newsData = [
@@ -40,9 +41,10 @@ const HomePage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Real-time Market Overview */}
         <MarketOverview />
+        <StockChart />
 
         {/* Latest News */}
-        <div className="backdrop-blur-lg bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-6">
+        <div className="backdrop-blur-lg bg-gray-800/50 rounded-xl shadow-lg border border-gray-700 p-6 mt-4">
           <div className="flex justify-between items-center mb-6">
             <h2 className="text-xl font-semibold flex items-center text-white">
               <Newspaper className="h-5 w-5 mr-2 text-blue-400" />
