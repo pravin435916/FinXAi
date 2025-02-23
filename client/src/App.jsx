@@ -1,8 +1,10 @@
-import React from 'react'
+import { Route,Routes } from 'react-router-dom'
+import Navbar from './components/Navbar/page'
 
- const App = () => {
+const App = () => {
   return (
-    <div className='text-3xl font-bold'>App</div>
-  )
+    <Navbar />
+  )   
 }
+
 export default App
