@@ -83,5 +83,16 @@ export const expenseApi = {
     } catch (error) {
       throw error;
     }
-  }
+  },
+  updateCategories: async (categories) => {
+    // Implement API call to update categories
+    const response = await fetch('/categories', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(categories),
+    });
+    return response.json();
+  },
 };

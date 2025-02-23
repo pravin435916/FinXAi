@@ -31,8 +31,8 @@ export default function Navbar() {
     return (
         <nav className="bg-gray-900 text-white shadow-lg">
             <div className="max-w-7xl mx-auto px-4">
-                <div className="flex justify-between items-center h-16">
-                    <div className="flex space-x-8">
+                <div className="flex flex-col md:flex-row justify-between items-center h-16">
+                    <div className="flex flex-wrap space-x-4 md:space-x-8">
                         {Object.entries(stockData).map(([symbol, details]) => (
                             <div
                                 key={symbol}
@@ -67,7 +67,7 @@ export default function Navbar() {
                             </div>
                         ))}
                     </div>
-                    <div className="text-sm text-gray-400">
+                    <div className="text-sm text-gray-400 mt-4 md:mt-0">
                         Last updated: {new Date().toLocaleTimeString()}
                     </div>
                 </div>
