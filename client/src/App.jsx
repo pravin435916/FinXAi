@@ -1,8 +1,13 @@
 import React from 'react'
+import HomePage from './pages/Homepage';
+import LandingPage from './pages/LandingPage';
 
  const App = () => {
   return (
-    <div className='text-3xl font-bold'>App</div>
+    <>
+      <HomePage />
+      {/* <LandingPage  /> */}
+    </>
   )
 }
-export default App
+export default App;
