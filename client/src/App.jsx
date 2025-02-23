@@ -7,7 +7,7 @@ import FinanceNewsSection from './components/NewsSection/page'
 import StockChart from './components/chart/page'
 import ExpenseTracker from './pages/ExpenseTracking';
 import StockSentiment from './components/sentiment/page';
-import StockAnalysis from './components/financialAnalysis/page';
+import StockAnalysisS from './components/financialAnalysis/page';
 
 import ROICalculator from './components/ROI/page'
 import StockAnalysis from './pages/StockAnalysis';
@@ -24,7 +24,7 @@ const App = () => {
         <Route path='/roi-calculator' element={<ROICalculator/>}/>
         <Route path='/chatbot' element={<Chatbot/>}/>
         <Route path='/sentiment' element={<StockSentiment/>}/>
-        <Route path='/financial-analysis' element={<StockAnalysis/>}/>
+        <Route path='/financial-analysis' element={<StockAnalysisS/>}/>
         {/* <Route path='/financial-analysis' element={<StockAnalysis/>}} */}
       </Routes>
       {/* <ROICalculator/> */}
